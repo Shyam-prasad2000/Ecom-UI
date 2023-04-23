@@ -1,1 +1,51 @@
-<p>registration works!</p>
+<div class="container row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+       <div class="screen">
+          <div class="screen__content">
+             <form class="login" (ngSubmit)="register()" [formGroup]="registrationForm">
+                    <h1>Login</h1>
+                <div class="login__field">
+                   <!-- <i class="login__icon fas fa-user"></i> -->
+                   <i class="fa-thin fa-user"></i>
+                   <input type="text" class="login__input" formControlName="FirstName" name="FirstName" placeholder="First Name">
+                </div>
+                <div *ngIf="(this.registrationForm.get('FirstName')?.touched||this.registrationForm.get('FirstName')?.dirty)&&this.registrationForm.get('FirstName')?.errors" style="color: red;">
+                   Invalid FirstName
+                </div>
+                <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" formControlName="LastName" name="LastName" placeholder="Last Name">
+                 </div>
+                 <div class="login__field">
+                    <i class="login__icon fas fa-user"></i>
+                    <input type="text" class="login__input" formControlName="emailMob" name="email-mob" placeholder="Email/Mobile No" ng-pattern="/^([_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5}))|(\d+$)$/" required>
+                 </div>
+                 <div *ngIf="(this.registrationForm.get('emailMob')?.touched||this.registrationForm.get('emailMob')?.dirty)&&this.registrationForm.get('emailMob')?.errors" style="color: red;">
+                    Invalid email/mobile no
+                 </div>
+                <div class="login__field">
+                   <i class="login__icon fa fa-lock"></i>
+                   <input type="password" class="login__input" formControlName="password" name="password" placeholder="Password">
+                </div>
+                <div *ngIf="(this.registrationForm.get('password')?.touched||this.registrationForm.get('password')?.dirty)&&this.registrationForm.get('password')?.errors" style="color: red;">
+                   Invalid password
+                </div>
+             
+                <button class="button login__submit">
+                   <span class="button__text">Register</span>
+                   <i class="button__icon fas fa-chevron-right"></i>
+                </button>				
+             </form>
+
+          </div>
+          <div class="screen__background">
+             <span class="screen__background__shape screen__background__shape4"></span>
+             <span class="screen__background__shape screen__background__shape3"></span>		
+             <span class="screen__background__shape screen__background__shape2"></span>
+             <span class="screen__background__shape screen__background__shape1"></span>
+          </div>		
+       </div>
+    </div>
+    <div class="col-md-4"></div>
+</div>
