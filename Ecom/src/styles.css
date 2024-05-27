@@ -198,7 +198,7 @@ button {
 .banner_bg_main {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    /* background-image: url(../images/banner-bg.png); */
     height: auto;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -936,3 +936,5 @@ input.mail_bt::placeholder {
 .margin_top90 {
     margin-top: 90px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
